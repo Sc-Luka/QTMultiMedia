@@ -14,7 +14,7 @@ SignUpWindow::SignUpWindow(QWidget *parent)
     , ui(new Ui::SignUpWindow)
 {
     ui->setupUi(this);
-    //******** paoli
+
     ui->enteredPass->setEchoMode(QLineEdit::Password);
     ui->reEnterdPass->setEchoMode(QLineEdit::Password);
 }
