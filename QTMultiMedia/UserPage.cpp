@@ -23,18 +23,15 @@ UserPage::UserPage(int userId, QWidget *parent)
 {
     ui->setupUi(this);
 
-    // video zomebi
     videoWidget->setFixedSize(600, 400);
     videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
     videoWidget->setStyleSheet("background: black;");
     mediaPlayer->setVideoOutput(videoWidget);
     videoWidget->setVisible(false);
 
-    // Scroll
     scrollArea->setWidgetResizable(true);
     scrollArea->setWidget(scrollContent);
 
-    // Main
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(ui->AddItem);
     mainLayout->addWidget(ui->Show);
@@ -122,7 +119,6 @@ void UserPage::on_Show_clicked()
         QWidget *fileWidget = new QWidget(scrollContent);
         QVBoxLayout *itemLayout = new QVBoxLayout(fileWidget);
 
-        // File informacia
         QLabel *infoLabel = new QLabel(
             QString("%1\nType: %2\nUploaded: %3")
                 .arg(filename)
@@ -131,7 +127,6 @@ void UserPage::on_Show_clicked()
             fileWidget);
         itemLayout->addWidget(infoLabel);
 
-        // Image vamowmeb
         if (filetype == "jpg" || filetype == "jpeg" || filetype == "png") {
             QPixmap pixmap;
             if (pixmap.loadFromData(content)) {
@@ -153,7 +148,6 @@ void UserPage::on_Show_clicked()
             stopBtn = new QPushButton("Stop", fileWidget);
 
             connect(playBtn, &QPushButton::clicked, [this, content, filetype]() {
-                // wina gavachere
                 if (mediaPlayer) {
                     mediaPlayer->stop();
                     delete mediaPlayer;
