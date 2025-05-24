@@ -38,7 +38,7 @@ void SignUpWindow::on_SignUpButton_clicked()
         QMessageBox::warning(this, "Password Mismatch", "Passwords do not match.");
         return;
     }
-    //useri tu arsebobs
+    
     QSqlQuery checkQuery;
     checkQuery.prepare("SELECT id FROM users WHERE username = :username");
     checkQuery.bindValue(":username", username);
@@ -50,7 +50,7 @@ void SignUpWindow::on_SignUpButton_clicked()
         QMessageBox::warning(this, "Username Taken", "This username is already used. Please choose another.");
         return;
     }
-    //vamateb
+    
     QSqlQuery insertQuery;
     insertQuery.prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
     insertQuery.bindValue(":username",username);
