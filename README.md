@@ -40,4 +40,4 @@ A C++ desktop application built with **Qt Framework** that integrates **MySQL us
 
 3. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/QtMultimedia.git
+   git clone https://github.com/Sc-Luka/QtMultimedia.git
